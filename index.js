@@ -11,7 +11,7 @@ module.exports = function(promises) {
     var promiseSolver = getPromiseSolver(promises[0]);
     promiseSolver.all(promises).then(
       function(res) {
-        var cleanResponse = promiseSolver.cleanRes(res);
+        var cleanResponse = promiseSolver.clearResponse(res);
         if (promiseSolver.hasErrors(res)) {
           return reject(cleanResponse);
         }
