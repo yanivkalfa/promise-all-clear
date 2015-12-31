@@ -1,6 +1,6 @@
 {
-  "name": "promise-all",
-  "version": "1.0.0",
+  "name": "promise-all-clear",
+  "version": "0.1.0",
   "description": "resolves or rejects an array or object of promises only when the entire collection promises ended.",
   "main": "index.js",
   "scripts": {
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yanivkalfa/promise-all.git"
+    "url": "git+https://github.com/yanivkalfa/promise-all-clear.git"
   },
   "author": "Yaniv Kalfa <netameta1@yahoo.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yanivkalfa/promise-all/issues"
+    "url": "https://github.com/yanivkalfa/promise-all-clear/issues"
   },
-  "homepage": "https://github.com/yanivkalfa/promise-all#readme",
+  "homepage": "https://github.com/yanivkalfa/promise-all-clear#readme",
   "devDependencies": {
     "chai": "^3.4.1",
     "mocha": "^2.3.4"

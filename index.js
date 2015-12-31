@@ -52,7 +52,7 @@ function getPromiseSolver(promise){
 }
 
 module.exports = {
-  promiseAll: function(promises) {
+  all: function(promises) {
     return new P(function(resolve, reject) {
       var promiseSolver = getPromiseSolver(promises[0]);
       promiseSolver.all(promises).then(
