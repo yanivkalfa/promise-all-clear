@@ -1,6 +1,6 @@
 {
   "name": "promise-all-clear",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "resolves or rejects an array or object of promises only when the entire collection promises ended.",
   "main": "index.js",
   "scripts": {
