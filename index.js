@@ -10,10 +10,10 @@ PromiseSolver.prototype.all = function(promises){
 };
 
 PromiseSolver.prototype.hasErrors = function(res) {
+  console.log(res);
   for (var i=0; i < res.length; i++) {
-    console.log(res);
-    console.log(res instanceof Error);
-    if (res instanceof Error) return true;
+    console.log(res[i] instanceof Error);
+    if (res[i] instanceof Error) return true;
   }
   return false;
 };
