@@ -1,53 +1,6 @@
-
 var P = require('bluebird');
-
-function PromiseSolver(){}
-PromiseSolver.prototype.all = function(promises){
-  return P.all(promises.map(function(promise) {
-      return promise.then( function (res) { return  res; }, function (err) { return err } )
-    })
-  );
-};
-
-PromiseSolver.prototype.hasErrors = function(res) {
-  console.log(res);
-  for (var i=0; i < res.length; i++) {
-    console.log(res[i] instanceof Error);
-    if (res[i] instanceof Error) return true;
-  }
-  return false;
-};
-
-
-function ObjectPromiseSolver(){}
-
-ObjectPromiseSolver.prototype.all = function(promises){
-  return P.all(
-    promises.map(
-      function(promise) {
-        return promise.p.then(
-          function (res) {
-            promise.err = false;
-            promise.res = res;
-            return  promise;
-          },
-          function (err) {
-            promise.err = err;
-            promise.res = false;
-            return  promise;
-          }
-        )
-      }
-    )
-  );
-};
-
-ObjectPromiseSolver.prototype.hasErrors = function(res) {
-  for (var i=0; i < res.length; i++) {
-    if (res.err) return true;
-  }
-  return false;
-};
+var ObjectPromiseSolver = require('./lib/ObjectPromiseSolver.js');
+var PromiseSolver = require('./lib/PromiseSolver.js');
 
 function getPromiseSolver(promise){
   return promise && promise.p ? new ObjectPromiseSolver() : new PromiseSolver();
@@ -58,13 +11,11 @@ module.exports = function(promises) {
     var promiseSolver = getPromiseSolver(promises[0]);
     promiseSolver.all(promises).then(
       function(res) {
+        var cleanResponse = promiseSolver.cleanRes(res);
         if (promiseSolver.hasErrors(res)) {
-          return reject(res);
+          return reject(cleanResponse);
         }
-        return resolve(res)
-      },
-      function(err){
-        return reject(err)
+        return resolve(cleanResponse)
       }
     );
   });
