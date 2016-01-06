@@ -52,6 +52,7 @@ all(promises).then(function(resp){
 
 
 <strong>Response </strong>
+
 In case of array of objects with the `p` property, response will be an array of mutated object where the `res`, `err`
 property are added to those objects.
 
