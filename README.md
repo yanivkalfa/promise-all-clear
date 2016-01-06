@@ -1,6 +1,7 @@
 Promise all clear
 ===============
 
+
 Resolves or rejects an array or object of promises only when the entire collection of promises was done executing.
 
 Exposes the `all` method that returns a promise and will iterate over the entire collection regardless of rejection or success.
@@ -44,10 +45,9 @@ all(promises).then(function(resp){
 }).catch(function(resp){
     //rejected
 });
-
-
-// In case of array of objects with the `p` property, response will be an array of mutated object where the `res`, `err`
-// property are added to those objects.
-
-// In case of array of promises, response will be an array with the promise reject or resolve value.
 ```
+
+In case of array of objects with the `p` property, response will be an array of mutated object where the `res`, `err`
+property are added to those objects.
+
+In case of array of promises, response will be an array with the promise reject or resolve value.
