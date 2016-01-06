@@ -2,6 +2,7 @@ Promise all clear
 ===============
 
 
+
 Resolves or rejects an array or object of promises only when the entire collection of promises was done executing.
 
 Exposes the `all` method that returns a promise and will iterate over the entire collection regardless of rejection or success.
@@ -11,6 +12,8 @@ The `all` method will take an array of promises or array of objects containing t
 and return an array of objects with feedback on which promise failed or succeeded or an array with the promise reject or resolve value.
 
 Note: array of objects containing `p` property will be mutated with the feedback on failure or success.
+
+
 <strong>Installation </strong>
 ```bash
 $ npm install promise-all-clear
@@ -46,6 +49,7 @@ all(promises).then(function(resp){
     //rejected
 });
 ```
+
 
 <strong>Response </strong>
 In case of array of objects with the `p` property, response will be an array of mutated object where the `res`, `err`
