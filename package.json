@@ -1,7 +1,7 @@
 {
   "name": "promise-all-clear",
   "version": "0.3.5",
-  "description": "resolves or rejects an array or object of promises only when the entire collection of promises was done executing.",
+  "description": "Resolves or rejects an array of promises only when the entire collection of promises was done executing.",
   "main": "index.js",
   "scripts": {
     "test": "mocha --recursive"
