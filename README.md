@@ -3,7 +3,7 @@ Promise all clear
 
 
 
-Resolves or rejects an array or object of promises only when the entire collection of promises was done executing.
+Resolves or rejects an array of promises only when the entire collection of promises was done executing.
 
 Exposes the `all` method that returns a promise and will iterate over the entire collection regardless of rejection or success.
 the promise will reject if one or more of the promises was rejected
@@ -24,10 +24,10 @@ $ npm install promise-all-clear
 ```javascript
 var all = require('promise-all-clear');
 
-// Can either be a simple array of promises or array.
+// Can either be a simple array of promises.
 var promises = [ aPromise, aPromise2, aPromise3 ];
 
-// Or object with the 'p' property and other properties you want to keep track of
+// Or array of objects with the 'p' property and other properties you want to keep track of.
 var promises = [
     {p: aPromise, id:'sjsjsha', msg: 'another property'},
     {p: aPromise2, id:'j3h37', msg: 'another property2'},
