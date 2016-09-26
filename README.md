@@ -38,7 +38,7 @@ all(promises).then(
     function(resp) {
         // resolved
     },
-    function(resp){
+    function(resp) {
         // rejected
     }
 )
