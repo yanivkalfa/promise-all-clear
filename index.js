@@ -8,7 +8,7 @@ var PromiseSolver = require('./lib/PromiseSolver.js');
  * @param {Object} promise
  * @returns {Object} an instance of a resolver
  */
-function getPromiseSolver(promise){
+function getPromiseSolver(promise) {
   return promise && promise.p ? new ObjectPromiseSolver() : new PromiseSolver();
 }
 
