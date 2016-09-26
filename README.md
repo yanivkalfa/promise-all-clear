@@ -45,7 +45,7 @@ all(promises).then(
 
 all(promises).then(function(resp) {
     // resolved
-}).catch(function(resp){
+}).catch(function(resp) {
     //rejected
 });
 ```
