@@ -35,7 +35,7 @@ var promises = [
 ]
 
 all(promises).then(
-    function(resp){
+    function(resp) {
         // resolved
     },
     function(resp){
